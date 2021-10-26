@@ -60,42 +60,23 @@
                                 <nav>
                                     <ul>
                                         <li><a href="<?= base_url('C_master'); ?>">Home</a>
-                                            <!-- <ul>
-                                                <li><a href="index.html">Home One</a></li>
-                                                <li><a href="index-2.html">Home Two</a></li>
-                                                <li><a href="index-3.html">Home Three</a></li>
-                                                <li><a href="index-4.html">Home Four</a></li>
-                                                <li><a href="index-5.html">Home Five</a></li>
-                                            </ul> -->
+
                                         </li>
                                         <li><a href="about.html">About</a></li>
                                         <li><a href="course.html">schedule</a>
+
+                                        </li>
+                                        <li><a href="<?= base_url('C_master/teacher_home'); ?>">Student</a>
                                             <ul>
-                                                <li><a href="course.html">courses</a></li>
-                                                <li><a href="course-details.html">courses details</a></li>
+                                                <li><a href="">Student</a></li>
+                                                <li><a href="teacher-details.html">Student schedule</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="event.html">Student</a>
-                                            <ul>
-                                                <li><a href="event.html">event</a></li>
-                                                <li><a href="event-left-side-bar.html">event left sidebar</a></li>
-                                                <li><a href="event-right-side-bar.html">event right sidebar</a></li>
-                                                <li><a href="event-details.html">event details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hidden-sm"><a href="#">teacher</a>
-                                            <ul>
-                                                <li><a href="<?= base_url('C_master/teacher_home'); ?>">teacher</a></li>
-                                                <li><a href="teacher-details.html">teacher schedule</a></li>
-                                            </ul>
+                                        <li class="hidden-sm"><a href="<?= base_url('C_master/teacher_home'); ?>">teacher</a>
+
                                         </li>
                                         <li><a href="blog.html">information</a>
-                                            <ul>
-                                                <li><a href="blog.html">information</a></li>
-                                                <li><a href="blog-left-side-bar.html">blog left sidebar</a></li>
-                                                <li><a href="blog-right-side-bar.html">blog righ sidebar</a></li>
-                                                <li><a href="blog-details.html">blog details</a></li>
-                                            </ul>
+
                                         </li>
                                         <li><a href="contact.html">Contact</a></li>
                                         <li><a href="#"> <button><i class="fa fa-sign-out" aria-hidden="true" style="color:red; font-weight:bold;font-size:20px;"></i>
