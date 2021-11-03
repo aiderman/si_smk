@@ -59,26 +59,26 @@
                             <div class="main-menu one text-end">
                                 <nav>
                                     <ul>
-                                        <li><a href="<?= base_url('C_master'); ?>">Home</a>
+                                        <li><a href="<?= base_url('C_master'); ?>">dasbor</a>
 
                                         </li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="course.html">schedule</a>
+                                        <li><a href="<?= base_url('C_master/sejarah'); ?>">Sejarah</a></li>
+                                        <li><a href="<?= base_url('C_master/kegiatan'); ?>">Kegiatan</a>
 
                                         </li>
-                                        <li><a href="<?= base_url('C_master/teacher_home'); ?>">Student</a>
+                                        <li><a href="<?= base_url('C_master/guru_home'); ?>">Siswa</a>
                                             <ul>
-                                                <li><a href="">Student</a></li>
-                                                <li><a href="teacher-details.html">Student schedule</a></li>
+                                                <li><a href="">Nilai</a></li>
+                                                <li><a href="guru-details.html">Jadwal Siswa</a></li>
                                             </ul>
                                         </li>
-                                        <li class="hidden-sm"><a href="<?= base_url('C_master/teacher_home'); ?>">teacher</a>
+                                        <li class="hidden-sm"><a href="<?= base_url('C_master/guru_home'); ?>">guru</a>
 
                                         </li>
-                                        <li><a href="blog.html">information</a>
+                                        <li><a href="<?= base_url('C_master/informasi'); ?>">informasi</a>
 
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="<?= base_url('C_master/kontak'); ?>">kontak</a></li>
                                         <li><a href="#"> <button><i class="fa fa-sign-out" aria-hidden="true" style="color:red; font-weight:bold;font-size:20px;"></i>
                                                     <h style="color: red;font-weight: bold;">LOGOUT</h>
                                                 </button>
