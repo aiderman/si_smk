@@ -136,16 +136,17 @@
     </div>
 </section>
 <!-- Notice End -->
+
+<!-- Notice End -->
 <!-- Choose Start -->
 <section class="choose-area pb-85 pt-77">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-left-4">
                 <div class="choose-content text-start">
-                    <h2>WHY YOU CHOOSE EDUHOME ?</h2>
-                    <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings the master-builder of humanit happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because. </p>
-                    <p class="choose-option">I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings the master-builder. </p>
-                    <a class="default-btn" href="course-details.html">view courses</a>
+                    <h2>Marselino Kasenda, Mar.Eng</h2>
+                    <p>Visi dari SMK Maritim Polaris ingin mewujudkan lembaga pendidikan dan pelatihan yang mampu menghasilkan sumber daya manusia yang trampil, tangguh, ulet dalam Ilmu Pengetahuan dan Teknologi Maritim yang berlandaskan cinta kasih dan memenuhi standar IMO (International Maritime Organization) </p>
+                    <a class="default-btn" href="<?php echo base_url('C_master/informasi')  ?>">lihat Informasi Sekolah</a>
                 </div>
             </div>
         </div>
@@ -158,60 +159,34 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <img src=" <?= base_url('assets/') ?>img/icon/section1.png" alt="section-title">
-                    <h2>COURSES WE OFFER</h2>
+                    <!-- <img src=" <?= base_url('assets/') ?>img/icon/section1.png" alt="section-title"> -->
+                    <h2>DAFTAR KEGIATAN SEKOLAH </h2>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-course">
-                    <div class="course-img">
-                        <a href="course-details.html"><img src="<?php echo base_url('assets/') ?>img/course/course1A.jpg" alt="course">
-                            <div class="course-hover">
-                                <i class="fa fa-link"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="course-content">
-                        <h3><a href="course-details.html">CSE ENGINEERING</a></h3>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                        <a class="default-btn" href="course-details.html">read more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-course">
-                    <div class="course-img">
-                        <a href="course-details.html"><img src=" <?= base_url('assets/') ?>img/course/course1A.jpg" alt="course">
-                            <div class="course-hover">
-                                <i class="fa fa-link"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="course-content">
-                        <h3><a href="course-details.html">CSE ENGINEERING</a></h3>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                        <a class="default-btn" href="course-details.html">read more</a>
+            <?php foreach ($kegiatan as $row) { ?>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-course">
+                        <div class="course-img">
+                            <a href="course-details.html"><img src="<?php echo base_url('assets/') ?>img/course/course1A.jpg" alt="course">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-content">
+                            <h3><a href="course-details.html"><?php echo $row->nama_kegiatan; ?></a></h3>
+                            <p><?php echo $row->penjelasan; ?></p>
+                            <p>KEIGATAN AKAN DIADAKAN PADA <?php echo $row->hari; ?></p>
+
+
+                            <!-- <a class="default-btn" href=<?php echo base_url('C_master/kegiatan') ?>>lihat detil</a> -->
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-course mb-0">
-                    <div class="course-img">
-                        <a href="course-details.html"><img src=" <?= base_url('assets/') ?>img/course/course1A.jpg" alt="course">
-                            <div class="course-hover">
-                                <i class="fa fa-link"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="course-content">
-                        <h3><a href="course-details.html">CSE ENGINEERING</a></h3>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness</p>
-                        <a class="default-btn" href="course-details.html">read more</a>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
+
         </div>
     </div>
 </div>

@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="logo">
-                            <a href="index.html"><img src="<?php echo base_url('assets/') ?>img/logo/logoA.png" alt="eduhome" /></a>
+                            <a href="index.html"><img src="<?php echo base_url('assets/') ?>img/logo/logo_si.png" alt="eduhome" /></a>
                         </div>
                     </div>
                     <div class="col-md-9">
@@ -66,13 +66,10 @@
                                         <li><a href="<?= base_url('C_master/kegiatan'); ?>">Kegiatan</a>
 
                                         </li>
-                                        <li><a href="<?= base_url('C_master/guru_home'); ?>">Siswa</a>
-                                            <ul>
-                                                <li><a href="">Nilai</a></li>
-                                                <li><a href="guru-details.html">Jadwal Siswa</a></li>
-                                            </ul>
+                                        <li><a href="<?= base_url('C_login/login_siswa'); ?>">Siswa</a>
+
                                         </li>
-                                        <li class="hidden-sm"><a href="<?= base_url('C_master/guru_home'); ?>">guru</a>
+                                        <li class="hidden-sm"><a href="<?= base_url('C_guru/login_guru'); ?>">guru</a>
 
                                         </li>
                                         <li><a href="<?= base_url('C_master/informasi'); ?>">informasi</a>
@@ -93,5 +90,6 @@
                 </div>
             </div>
         </div>
+
     </header>
     <!-- Header Area End -->

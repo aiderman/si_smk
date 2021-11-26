@@ -28,9 +28,11 @@ class M_jadwal_pelajaran extends CI_Model
         $this->db->join('mata_pelajaran as m', 'm.id_matapelajaran=jadwal_pelajaran.idp_matapelajaran');
         $this->db->join('kelas as k', 'k.id_kls=jadwal_pelajaran.idp_kls');
         $this->db->where('jadwal_pelajaran.idp_guru', $id);
-        // $this->db->select('')
+        // $this->db->select('jadwal_pelajaran.hari_jadwal ORDER BY jadwal_pelajaran.hari_jadwal ASC');
+        $this->db->order_by('jadwal_pelajaran.hari_jadwal ASC');
 
 
         return $this->db->get($this->table)->result();
     }
+   
 }

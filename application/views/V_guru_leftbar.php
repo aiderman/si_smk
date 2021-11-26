@@ -1,5 +1,6 @@
 <header id="header">
     <!--Main header-->
+
     <div class="main-header">
         <!--Profile image-->
         <figure class="img-profile">
@@ -12,9 +13,9 @@
         <!--Main navigation-->
         <nav id="main-nav" class="main-nav clearfix tabbed">
             <ul>
-                <li><a href=<?php echo base_url('C_master/guru_home') ?>> <i class="fa fa-user"></i>PROFIL</a></li>
-                <li><a href=<?php echo base_url('C_master/guru_jadwal') ?>> <i class="fa fa-calendar-o"></i>JADWAL</a></li>
-                <li><a href=<?php echo base_url('C_master/guru_nilai_siswa') ?>> <i class="fa fa-file-text"></i>NILAI SISWA</a></li>
+                <li><a href=<?php echo base_url('C_guru/guru_home') ?>> <i class="fa fa-user"></i>PROFIL</a></li>
+                <li><a href=<?php echo base_url('C_guru/guru_jadwal') ?>> <i class="fa fa-calendar-o"></i>JADWAL</a></li>
+                <li><a href=<?php echo base_url('C_guru/guru_nilai_siswa') ?>> <i class="fa fa-file-text"></i>NILAI SISWA</a></li>
 
             </ul>
         </nav>

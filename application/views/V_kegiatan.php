@@ -73,21 +73,7 @@
 <!-- Notice Start -->
 
 <!-- Notice End -->
-<!-- Choose Start -->
-<section class="choose-area pb-85 pt-77">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-left-4">
-                <div class="choose-content text-start">
-                    <h2>Marselino Kasenda, Mar.Eng</h2>
-                    <p>Visi dari SMK Maritim Polaris ingin mewujudkan lembaga pendidikan dan pelatihan yang mampu menghasilkan sumber daya manusia yang trampil, tangguh, ulet dalam Ilmu Pengetahuan dan Teknologi Maritim yang berlandaskan cinta kasih dan memenuhi standar IMO (International Maritime Organization) </p>
-                    <a class="default-btn" href="<?php echo base_url('C_master/informasi')  ?>">lihat Informasi Sekolah</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Choose Area End -->
+
 <!-- Courses Area Start -->
 <div class="courses-area pt-150 text-center">
     <div class="container">

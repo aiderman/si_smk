@@ -1,5 +1,5 @@
 <?php include "header.php" ?>
-<br>
+<br><br>
 
 <body style="background-image: url(http://localhost/si_smk/assets/img/slider/sliderB1.jpg); background-position:center; background-attachment: fixed; background-size: 1000%; ">
 
@@ -36,7 +36,7 @@
                         <div class="about">
                             <!--Main title-->
                             <div class="main-title">
-                                <h1>profil</h1>
+                                <h1>JADWAL mengajar</h1>
                                 <div class="divider">
                                     <div class="zigzag large clearfix " data-svg-drawing="yes">
                                         <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -75,8 +75,8 @@
                                                     <thead>
                                                         <tr>
                                                             <th scope="col">No</th>
-                                                            <th scope="col">MATA PELAJARAN</th>
                                                             <th scope="col">HARI</th>
+                                                            <th scope="col">MATA PELAJARAN</th>
                                                             <th scope="col">JAM</th>
                                                             <th scope="col">KELAS</th>
                                                             <th scope="col">JURUSAN</th>
@@ -88,8 +88,8 @@
                                                         foreach ($jadwal as $row3) { ?>
                                                             <tr>
                                                                 <th scope="row"><?php echo $a++; ?></th>
-                                                                <td><?php echo $row3->nama_matapelajaran ?></td>
                                                                 <td><?php echo $row3->hari_jadwal ?></td>
+                                                                <td><?php echo $row3->nama_matapelajaran ?></td>
                                                                 <td><?php echo $row3->jam_jadwal ?></td>
                                                                 <td><?php echo $row3->nama_kls ?></td>
                                                                 <td><?php echo $row3->nama_jurusan ?></td>
@@ -124,15 +124,7 @@
                                 </div>
 
 
-                                <!--Row-->
-                                <div class="row ">
-                                    <div class="col-md-12">
-                                        <a class="but opc-1 ico" href="#">Download my cv</a>
-                                        <a class="but opc-2 ico" href="#">Print my resume</a>
 
-                                    </div>
-                                </div>
-                                <!--End row-->
                             </div>
                             <!--End button-->
 
