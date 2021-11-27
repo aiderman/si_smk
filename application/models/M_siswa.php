@@ -7,6 +7,13 @@ class M_siswa extends CI_Model
     {
         $this->db->select('*');
         // $this->db->join('jurusan as j', 'j.id_jurusan=siswa.idp_jurusan');
+        $this->db->where('siswa.id_siswa', $id);
+        return $this->db->get($this->table)->result();
+    }
+    public function cek_siswa($id)
+    {
+        $this->db->select('*');
+        // $this->db->join('jurusan as j', 'j.id_jurusan=siswa.idp_jurusan');
         $this->db->where('siswa.nis_siswa', $id);
         return $this->db->get($this->table)->result();
     }
@@ -15,13 +22,13 @@ class M_siswa extends CI_Model
         $user = $data['user'];
         $pass = $data['pass'];
         $this->db->select('*');
-        $this->db->where(['nis_siswa', $user], ['password_siswa', $pass]);
+        $this->db->where(['siswa.nis_siswa', $user], ['password_siswa', $pass]);
         return $this->db->get($this->table)->result();
     }
     public function jadwal_siswa_individu($id_siswa)
     {
         $this->db->select('*');
-        $this->db->where('id_siswa', $id_siswa);
+        $this->db->where('siswa.nis_siswa', $id_siswa);
         return $this->db->get($this->table)->result();
     }
 }

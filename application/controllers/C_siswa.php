@@ -46,16 +46,20 @@ class C_siswa extends CI_Controller
 		// $data = $this->session->userdata('session_nis');
 		$data =  array(
 			'title' 	=> 'Sistem Informasi Sekolah',
-			'id' 		=> $this->session->userdata['logged_in']['session_nis']
+			'id' 		=> $this->session->userdata['logged_in']['session_id'],
+			'nis' 		=> $this->session->userdata['logged_in']['session_nis']
 		);
 		// echo "<pre>";
 		// echo print_r($data);
 		// echo "<pre>";
 		// die();
 		$id = $data['id'];
-		// echo print_r($id);
-		// die();
+
 		$data['nama'] = $this->M_siswa->main_siswa($id);
+		// echo "<pre>";
+		// echo print_r($data);
+		// echo "<pre>";
+		// die();
 		$this->load->view('V_siswa_profil', $data);
 	}
 
@@ -64,7 +68,8 @@ class C_siswa extends CI_Controller
 
 		$data =  array(
 			'title' 	=> 'Sistem Informasi Sekolah',
-			'id' 		=> $this->session->userdata['logged_in']['session_nis']
+			'id' 		=> $this->session->userdata['logged_in']['session_id'],
+			'nis' 		=> $this->session->userdata['logged_in']['session_nis']
 		);
 		// echo "<pre>";
 		// echo print_r($data);
@@ -87,7 +92,8 @@ class C_siswa extends CI_Controller
 	{
 		$data =  array(
 			'title' 	=> 'Sistem Informasi Sekolah',
-			'id' 		=> $this->session->userdata['logged_in']['session_nis']
+			'id' 		=> $this->session->userdata['logged_in']['session_id'],
+			'nis' 		=> $this->session->userdata['logged_in']['session_nis']
 		);
 		// echo "<pre>";
 		// echo print_r($data);

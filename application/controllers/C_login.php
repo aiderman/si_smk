@@ -19,11 +19,13 @@ class C_login extends CI_Controller
 	{
 		$this->load->view('V_login_siswa');
 	}
+
+
 	public function siswa_cek()
 	{
 		$id = $this->input->post('nis');
 
-		$data = $this->M_siswa->main_siswa($id);
+		$data = $this->M_siswa->cek_siswa($id);
 		// echo "<pre>";
 		// echo print_r($data);
 		// echo "</pre>";
@@ -31,7 +33,8 @@ class C_login extends CI_Controller
 
 		if ($data == TRUE) {
 			$session_data = array(
-				'session_nis' 		=> $data[0]->id_siswa,
+				'session_nis' 		=> $data[0]->nis_siswa,
+				'session_id' 		=> $data[0]->id_siswa,
 
 			);
 			// echo "<pre>";
