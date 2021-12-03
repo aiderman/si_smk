@@ -13,9 +13,12 @@ class C_master extends CI_Controller
 		$this->load->model('M_jadwal_pelajaran');
 		$this->load->model('M_jadwal_siswa');
 		$this->load->model('M_kegiatan');
+		$this->load->model('M_pengumuman');
 	}
 	public function index()
 	{
+
+		$data['p'] = $this->M_pengumuman->pengumuman();
 		$data['kegiatan'] = $this->M_kegiatan->per_kegiatan();
 		$this->load->view('index', $data);
 	}
@@ -46,6 +49,15 @@ class C_master extends CI_Controller
 		// echo print_r($data['kegiatan']);
 		// echo "<pre>";
 		// die();
+		$this->load->view('V_kegiatan', $data);
+	}
+	public function pengumuman()
+	{
+		$data['p'] = $this->M_pengumuman->pengumuman();
+		echo "<pre>";
+		echo print_r($data['p']);
+		echo "<pre>";
+		die();
 		$this->load->view('V_kegiatan', $data);
 	}
 

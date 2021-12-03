@@ -10,6 +10,7 @@ require_once 'autoload.inc.php';
 
 	// Instantiate and use the dompdf class
 	$dompdf = new Dompdf();
+// echo print_r($dompdf);	
 	// Load HTML content
 	$html = "
 	<table>
@@ -24,15 +25,15 @@ require_once 'autoload.inc.php';
 			</tr>
 		</tbody>
 	</table>"
-	$dompdf->loadHtml('<h1>Welcome to CodexWorld.com</h1>');
+	// $dompdf->loadHtml('<h1>Welcome to CodexWorld.com</h1>');
 
-	// (Optional) Setup the paper size and orientation
-	$dompdf->setPaper('A4', 'portait');
+	// // (Optional) Setup the paper size and orientation
+	// $dompdf->setPaper('A4', 'portait');
 
-	// Render the HTML as PDF
-	$dompdf->render();
-    ob_clean();
-    $dompdf->stream("laporan.pdf", array("Attachment" => FALSE));
+	// // Render the HTML as PDF
+	// $dompdf->render();
+    // ob_clean();
+    // $dompdf->stream("laporan.pdf", array("Attachment" => FALSE));
 
 
 // }

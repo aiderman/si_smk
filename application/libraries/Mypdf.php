@@ -12,13 +12,13 @@ class Mypdf
         $this->ci = &get_instance();
     }
 
-    public function generate($view, $data = array())
+    public function generate($view, $data = array(), $filename = 'Laporan', $paper = 'A4', $orientation = 'portait')
     {
         $html = $this->ci->load->view($view, $data, TRUE);
-        $dompdf->loadHtml('<h1>Welcome to CodexWorld.com</h1>');
+        $dompdf->loadHtml($html);
 
         // (Optional) Setup the paper size and orientation
-        $dompdf->setPaper('A4', 'portait');
+        $dompdf->setPaper($paper, $orientation);
 
         // Render the HTML as PDF
         $dompdf->render();

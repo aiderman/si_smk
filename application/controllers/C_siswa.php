@@ -15,7 +15,7 @@ class C_siswa extends CI_Controller
 		$this->load->model('M_kegiatan');
 
 		if (!($this->session->userdata('logged_in'))) {
-			redirect('c_login');
+			redirect('c_login/login_siswa');
 		}
 		// if ($this->session->userdata['logged_in']['session_nis'] == "1") {
 		// 	redirect('c_login/logout');
@@ -53,7 +53,7 @@ class C_siswa extends CI_Controller
 		// echo print_r($data);
 		// echo "<pre>";
 		// die();
-		$id = $data['id'];
+		$id = $data['nis'];
 
 		$data['nama'] = $this->M_siswa->main_siswa($id);
 		// echo "<pre>";
@@ -75,8 +75,9 @@ class C_siswa extends CI_Controller
 		// echo print_r($data);
 		// echo "<pre>";
 		// die();
+		$nim = $data['nis'];
+		$data['nama'] = $this->M_siswa->main_siswa($nim);
 		$id = $data['id'];
-		$data['nama'] = $this->M_siswa->main_siswa($id);
 
 		$data['jadwal'] = $this->M_jadwal_siswa->show_jadwal_pelajaran_per_siswa($id);
 
@@ -99,8 +100,10 @@ class C_siswa extends CI_Controller
 		// echo print_r($data);
 		// echo "<pre>";
 		// die();
+		$nim = $data['nis'];
+		$data['nama'] = $this->M_siswa->main_siswa($nim);
 		$id = $data['id'];
-		$data['nama'] = $this->M_siswa->main_siswa($id);
+
 		$data['nilai_siswa'] = $this->M_jadwal_siswa->tampil_nilai_per_siswa($id);
 
 		// echo "<pre>";
@@ -110,6 +113,24 @@ class C_siswa extends CI_Controller
 		// die();
 
 		$this->load->view('V_siswa_nilai_siswa', $data);
+	}
+
+	public function cetak_nilai()
+	{
+		$data =  array(
+			'title' 	=> 'Sistem Informasi Sekolah',
+			'id' 		=> $this->session->userdata['logged_in']['session_id'],
+			'nis' 		=> $this->session->userdata['logged_in']['session_nis']
+		);
+
+		$id = $data['id'];
+		$data['nilai_siswa'] = $this->M_jadwal_siswa->tampil_nilai_per_siswa($id);
+		// echo "<pre>";
+		// echo print_r($data['nama']);
+		// echo print_r($data['nilai_siswa']);
+		// echo "<pre>";
+		// die();
+		$this->load->view('V_siswa_print', $data);
 	}
 
 

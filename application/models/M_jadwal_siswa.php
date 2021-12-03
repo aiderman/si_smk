@@ -51,4 +51,32 @@ class M_jadwal_siswa extends CI_Model
 
         return $this->db->get($this->table)->result();
     }
+
+    public function daftar_siswa_per_guru($id)
+    {
+        $this->db->select('*');
+        $this->db->join('guru as g', 'g.id_guru=jadwal_siswa.idp_guru');
+        $this->db->join('siswa as s', 's.id_siswa=jadwal_siswa.idp_siswa');
+        $this->db->join('kelas as k', 'k.id_kls=jadwal_siswa.idp_kls');
+        $this->db->join('jurusan as j', 'j.id_jurusan=jadwal_siswa.idp_jurusan');
+
+        $this->db->where('jadwal_siswa.idp_guru', $id);
+
+
+        return $this->db->get($this->table)->result();
+    }
+    public function siswa_per_guru($id, $ids)
+    {
+        $this->db->select('*');
+        $this->db->join('guru as g', 'g.id_guru=jadwal_siswa.idp_guru');
+        $this->db->join('siswa as s', 's.id_siswa=jadwal_siswa.idp_siswa');
+        $this->db->join('kelas as k', 'k.id_kls=jadwal_siswa.idp_kls');
+        $this->db->join('jurusan as j', 'j.id_jurusan=jadwal_siswa.idp_jurusan');
+        $this->db->join('mata_pelajaran as m', 'm.id_matapelajaran=jadwal_siswa.idp_matapelajaran');
+
+        $this->db->where('jadwal_siswa.idp_guru', $id);
+        $this->db->where('jadwal_siswa.idp_siswa', $ids);
+
+        return $this->db->get($this->table)->result();
+    }
 }

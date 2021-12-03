@@ -7,14 +7,15 @@ class M_siswa extends CI_Model
     {
         $this->db->select('*');
         // $this->db->join('jurusan as j', 'j.id_jurusan=siswa.idp_jurusan');
-        $this->db->where('siswa.id_siswa', $id);
+        $this->db->where('siswa.nis_siswa', $id);
         return $this->db->get($this->table)->result();
     }
-    public function cek_siswa($id)
+    public function cek_siswa($nis, $pass)
     {
         $this->db->select('*');
         // $this->db->join('jurusan as j', 'j.id_jurusan=siswa.idp_jurusan');
-        $this->db->where('siswa.nis_siswa', $id);
+        $this->db->where('siswa.nis_siswa', $nis);
+        $this->db->where('siswa.password_siswa', $pass);
         return $this->db->get($this->table)->result();
     }
     public function siswa_login($data)
@@ -31,4 +32,5 @@ class M_siswa extends CI_Model
         $this->db->where('siswa.nis_siswa', $id_siswa);
         return $this->db->get($this->table)->result();
     }
+   
 }

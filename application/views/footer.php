@@ -1,63 +1,31 @@
-<!-- Footer Start -->
-<footer class="footer-area">
-    <div class="main-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-widget pr-60">
-                        <div class="footer-logo pb-25">
-                            <a href="index.html"><img src="<?php echo base_url('assets/') ?>img/logo/footer-logoA.png" alt="eduhome"></a>
+<!-- Testimonial Area Start -->
+<div class="testimonial-area pt-110 pb-105 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="testimonial-owl owl-theme owl-carousel">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="single-testimonial">
+                        <div class="testimonial-info">
+                            <div class="testimonial-img">
+                                <img src="<?= base_url('assets/') ?>img/testimonial/testimonialA1.jpg" alt="testimonial">
+                            </div>
+                            <div class="testimonial-content">
+                                <p style="text-transform:uppercase ;">Kembangkan struktur berpikirmu bukan sekedar sibuk menambah pengetahuan</p>
+                                <p style="color: white;">
+                                <h1 style="color: white; text-transform: capitalize;">Kepala Sekolah</h1>
+                                <strong style="color: white;">
+                                    <h1 style="color: white; text-transform: capitalize;">Marselino Kasenda, Mar.Eng
+                                    </h1>
+                                </strong>
+                                </p>
+                            </div>
                         </div>
-                        <p>I must explain to you how all this mistaken idea of denoung pleure and praising pain was born and give you a coete account of the system. </p>
-                        <div class="footer-social">
-                            <ul>
-                                <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                                <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-widget">
-                        <h3>information</h3>
-                        <ul>
-                            <li><a href="#">addmission</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 pt-4 pt-lg-0">
-                    <div class="single-widget">
-                        <h3>useful links</h3>
-                        <ul>
-                            <li><a href="#">our courses</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 pt-4 pt-lg-0">
-                    <div class="single-widget">
-                        <h3>get in touch</h3>
-                        <p>Your address goes here, Street<br>City, Roadno 785 New York</p>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer-bottom text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <p>Copyright © <a style="color: red;" href="#">Cleverlabs 2021</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Footer End -->
+</div>
 
 <script src="<?php echo base_url('assets/') ?>js/vendor/jquery-3.6.0.min.js"></script>
 <script src="<?php echo base_url('assets/') ?>js/vendor/jquery-migrate-3.3.2.min.js"></script>

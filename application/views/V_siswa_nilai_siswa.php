@@ -103,155 +103,197 @@
                                         <!--End row-->
 
                                     </div>
+
+
                                 </div>
-                                <!--End block content-->
                             </div>
-                            <!--End content-->
-
-                            <!--Main title-->
-
-                            <!--End right content-->
+                            <!--End block content-->
                         </div>
-                        <!--End  row-->
+                        <!--End content-->
+                        <div class="row ">
+
+
+                            <!--Button-->
+                            <div class="button ofsInTop tCenter">
+
+                                <div class="divider">
+                                    <div class="zigzag large clearfix " data-svg-drawing="yes">
+                                        <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                            <path d="M1.357,12.26 10.807,2.81 20.328,12.332
+29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;" />
+                                        </svg>
+                                    </div>
+                                </div>
+
+
+                                <!--Row-->
+                                <div class="row ">
+
+
+                                    <div class="col-md-12">
+
+                                        <a class="but opc-2 ico" href="<?php echo base_url('c_siswa/cetak_nilai') ?>">cetak nilai</a>
+
+                                    </div>
+
+
+
+                                </div>
+                                <!--End row-->
+
+
+                            </div>
+                            <!--End button-->
+
+
+
+                        </div>
+                        <!--End row-->
+
+                        <!--Main title-->
+
+                        <!--End right content-->
                 </div>
-                <!--End  container-->
+                <!--End  row-->
             </div>
-            <!--End wrapper-->
+            <!--End  container-->
+        </div>
+        <!--End wrapper-->
 
 
-            </form>
-            <!--Javascript-->
-            <script src="<?php echo base_url('assets1/') ?>js/jquery-1.11.3.min.js" type="text/javascript"></script>
-            <script src="<?php echo base_url('assets1/') ?>js/jquery-migrate-1.2.1.js" type="text/javascript"></script>
-            <script src="<?php echo base_url('assets1/') ?>js/owl.carousel.js" type="text/javascript"></script>
-            <script src="<?php echo base_url('assets1/') ?>js/jquery.magnific-popup.js" type="text/javascript"></script>
-            <script src="<?php echo base_url('assets1/') ?>js/jquery.easytabs.min.js" type="text/javascript"></script>
-            <script src="<?php echo base_url('assets1/') ?>js/jquery.easing.1.3.js" type="text/javascript"></script>
-            <script src="<?php echo base_url('assets1/') ?>js/modernizr.js" type="text/javascript"></script>
-            <script src="<?php echo base_url('assets1/') ?>js/placeholders.min.js" type="text/javascript"></script>
-            <script src="<?php echo base_url('assets1/') ?>js/script.js" type="text/javascript"></script>
-            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+        </form>
+        <!--Javascript-->
+        <script src="<?php echo base_url('assets1/') ?>js/jquery-1.11.3.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets1/') ?>js/jquery-migrate-1.2.1.js" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets1/') ?>js/owl.carousel.js" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets1/') ?>js/jquery.magnific-popup.js" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets1/') ?>js/jquery.easytabs.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets1/') ?>js/jquery.easing.1.3.js" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets1/') ?>js/modernizr.js" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets1/') ?>js/placeholders.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets1/') ?>js/script.js" type="text/javascript"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
 
 
-            <script>
-                (function($) {
-                    "use strict";
+        <script>
+            (function($) {
+                "use strict";
 
-                    $(document).ready(function() {
+                $(document).ready(function() {
 
-                        $('#wrapper').easytabs({
-                            animate: true,
-                            updateHash: false,
-                            transitionIn: 'fadeIn',
-                            transitionOut: 'fadeOut',
-                            animationSpeed: 100,
-                            tabActiveClass: 'active',
-                            tabs: ' #main-nav.tabbed > ul > li ',
-                            transitionInEasing: 'linear',
-                            transitionOutEasing: 'linear'
+                    $('#wrapper').easytabs({
+                        animate: true,
+                        updateHash: false,
+                        transitionIn: 'fadeIn',
+                        transitionOut: 'fadeOut',
+                        animationSpeed: 100,
+                        tabActiveClass: 'active',
+                        tabs: ' #main-nav.tabbed > ul > li ',
+                        transitionInEasing: 'linear',
+                        transitionOutEasing: 'linear'
 
-                        });
-
-
-                        //---------------------------------- Google map location -----------------------------------------//
+                    });
 
 
-                        $('#wrapper').bind('easytabs:after', function() {
-
-                            var styles = [{
-                                    stylers: [{
-                                            saturation: -100
-                                        }
-
-                                    ]
-                                }, {
-                                    featureType: 'road',
-                                    elementType: 'geometry',
-                                    stylers: [{
-                                            hue: "#74b7b0"
-                                        },
-                                        {
-                                            visibility: 'simplified'
-                                        }
-                                    ]
-                                }, {
-                                    featureType: 'road',
-                                    elementType: 'labels',
-                                    stylers: [{
-                                        visibility: 'on'
-                                    }]
-                                }],
-
-                                lat = -33.867487,
-                                lng = 151.20699,
+                    //---------------------------------- Google map location -----------------------------------------//
 
 
+                    $('#wrapper').bind('easytabs:after', function() {
 
-
-
-                                customMap = new google.maps.StyledMapType(styles, {
-                                    name: 'Styled Map'
-                                }),
-
-
-                                mapOptions = {
-                                    zoom: 14,
-                                    scrollwheel: false,
-                                    disableDefaultUI: true,
-                                    center: new google.maps.LatLng(lat, lng),
-                                    mapTypeControlOptions: {
-                                        mapTypeIds: [google.maps.MapTypeId.ROADMAP]
+                        var styles = [{
+                                stylers: [{
+                                        saturation: -100
                                     }
-                                },
-                                map = new google.maps.Map(document.getElementById('map'), mapOptions),
-                                myLatlng = new google.maps.LatLng(lat, lng),
 
-
-
-
-                                marker = new google.maps.Marker({
-                                    position: myLatlng,
-                                    map: map,
-                                    icon: {
-                                        url: 'img/marker.png',
-                                        scaledSize: new google.maps.Size(26, 42)
+                                ]
+                            }, {
+                                featureType: 'road',
+                                elementType: 'geometry',
+                                stylers: [{
+                                        hue: "#74b7b0"
+                                    },
+                                    {
+                                        visibility: 'simplified'
                                     }
-                                });
+                                ]
+                            }, {
+                                featureType: 'road',
+                                elementType: 'labels',
+                                stylers: [{
+                                    visibility: 'on'
+                                }]
+                            }],
+
+                            lat = -33.867487,
+                            lng = 151.20699,
 
 
 
 
 
-                            map.mapTypes.set('map_style', customMap);
-                            map.setMapTypeId('map_style');
+                            customMap = new google.maps.StyledMapType(styles, {
+                                name: 'Styled Map'
+                            }),
+
+
+                            mapOptions = {
+                                zoom: 14,
+                                scrollwheel: false,
+                                disableDefaultUI: true,
+                                center: new google.maps.LatLng(lat, lng),
+                                mapTypeControlOptions: {
+                                    mapTypeIds: [google.maps.MapTypeId.ROADMAP]
+                                }
+                            },
+                            map = new google.maps.Map(document.getElementById('map'), mapOptions),
+                            myLatlng = new google.maps.LatLng(lat, lng),
+
+
+
+
+                            marker = new google.maps.Marker({
+                                position: myLatlng,
+                                map: map,
+                                icon: {
+                                    url: 'img/marker.png',
+                                    scaledSize: new google.maps.Size(26, 42)
+                                }
+                            });
+
+
+
+
+
+                        map.mapTypes.set('map_style', customMap);
+                        map.setMapTypeId('map_style');
 
 
 
 
 
 
-
-
-                        });
-
-
-
-
-
-
-
-
-
-                        //---------------------------------- End google map location -----------------------------------------//
 
 
                     });
 
-                })(jQuery);
-            </script>
 
 
-            <!-- Google analytics -->
 
 
-            <!-- End google analytics -->
+
+
+
+
+                    //---------------------------------- End google map location -----------------------------------------//
+
+
+                });
+
+            })(jQuery);
+        </script>
+
+
+        <!-- Google analytics -->
+
+
+        <!-- End google analytics -->

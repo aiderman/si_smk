@@ -17,6 +17,7 @@
                 <li><a href=<?php echo base_url('C_siswa/siswa_jadwal') ?>>
                         <i class="fa fa-calendar-o"></i>JADWAL</a></li>
                 <li><a href=<?php echo base_url('C_siswa/siswa_nilai_siswa') ?>> <i class="fa fa-file-text"></i>NILAI</a></li>
+                <li><a href=<?php echo base_url('C_login/logout') ?>> <i class="fa fa-power-off"></i>keluar</a></li>
 
             </ul>
         </nav>

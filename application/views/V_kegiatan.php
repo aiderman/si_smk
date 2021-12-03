@@ -90,7 +90,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-course">
                         <div class="course-img">
-                            <a href="course-details.html"><img src="<?php echo base_url('assets/') ?>img/course/course1A.jpg" alt="course">
+                            <a href="#"><img src="<?php echo base_url('assets/') ?>img/course/course1b.jpg" alt="course">
                                 <div class="course-hover">
                                     <i class="fa fa-link"></i>
                                 </div>
@@ -112,31 +112,6 @@
     </div>
 </div>
 <!-- Courses Area End -->
-
-<!-- Testimonial Area Start -->
-<div class="testimonial-area pt-110 pb-105 text-center">
-    <div class="container">
-        <div class="row">
-            <div class="testimonial-owl owl-theme owl-carousel">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="single-testimonial">
-                        <div class="testimonial-info">
-                            <div class="testimonial-img">
-                                <img src="<?= base_url('assets/') ?>img/testimonial/testimonialA1.jpg" alt="testimonial">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>I must explain to you how all this mistaken idea of denoung pleure and praising pain was born and I will give you a coete account of the system, and expound the actual</p>
-                                <h4>David Morgan</h4>
-                                <h5>Student, CSE</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Testimonial Area End -->
 
 
 <?php include_once "footer.php"; ?>

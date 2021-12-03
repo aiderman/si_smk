@@ -15,7 +15,8 @@
             <ul>
                 <li><a href=<?php echo base_url('C_guru/guru_home') ?>> <i class="fa fa-user"></i>PROFIL</a></li>
                 <li><a href=<?php echo base_url('C_guru/guru_jadwal') ?>> <i class="fa fa-calendar-o"></i>JADWAL</a></li>
-                <li><a href=<?php echo base_url('C_guru/guru_nilai_siswa') ?>> <i class="fa fa-file-text"></i>NILAI SISWA</a></li>
+                <li><a href=<?php echo base_url('C_guru/guru_daftar_siswa') ?>> <i class="fa fa-file-text"></i>NILAI SISWA</a></li>
+                <li><a href=<?php echo base_url('C_login/logout') ?>> <i class="fa fa-power-off"></i>keluar</a></li>
 
             </ul>
         </nav>

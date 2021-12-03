@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sistem Informasi Akademik Sekolah</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
     <style>
         body {
-            background: url('assets/img/slider/sliderB1.jpg');
+            background: url(<?php echo base_url('assets/img/slider/sliderB1.jpg')  ?>);
             padding: 0;
             margin: 0;
             -webkit-background-size: cover;
@@ -61,14 +62,16 @@
             filter: blur(10px);
         }
 
+
         .box {
             position: absolute;
-            height: 100%;
-            width: 100%;
+            /* height: 130%; */
+            /* width: 100%; */
             font-family: Helvetica;
             color: #fff;
-            background: rgba(0, 0, 0, 0.13);
-            padding: 30px 0px;
+            /* border: 2px solid white; */
+            /* border-radius: 27px; */
+            background: #E2EFFF;
         }
 
         .box h1 {
@@ -79,7 +82,7 @@
 
         .box input {
             display: block;
-            width: 300px;
+            width: 75%;
             margin: 20px auto;
             padding: 15px;
             background: rgba(0, 0, 0, 0.2);
@@ -95,7 +98,7 @@
         }
 
         .box button {
-            background: #6f72ff;
+            /* background: #6f72ff; */
             border: 0;
             color: #fff;
             padding: 10px;
@@ -107,7 +110,7 @@
         }
 
         .box button:hover {
-            background: #acaeff;
+            /* background: #acaeff; */
             border: 0;
             color: #fff;
             padding: 10px;
@@ -119,7 +122,7 @@
         }
 
         .box button:active {
-            background: #acaeff;
+            /* background: #acaeff; */
         }
 
         .box p {
@@ -145,15 +148,29 @@
             <video id="Video2" class="bgvid inner" autoplay="false" muted="muted" preload="auto" loop>
                 <source src="http://shortcodelic1.manuelmasiacsasi.netdna-cdn.com/themes/geode/wp-content/uploads/2014/04/milky-way-river-1280hd.mp4.mp4" type="video/mp4">
             </video>
-            <div class="box">
+            <div class="box" style="margin-bottom:20px ;">
                 <h1 style="color:#2e2e2e"> MASUKAN NIS </h1>
                 <form method="POST" action="<?php echo base_url('c_login/siswa_cek')  ?>">
 
-                    <input type="number" min="0" placeholder="123456" name="nis" />
-                    <!-- <input type="text" placeholder="password" name="password" /> -->
-                    <button id="submit" type="submit" name="login">Masuk</button>
+                    <div class="row">
+                        <input type="number" min="0" placeholder="123456" name="nis" required />
+                        <input type="number" min="0" placeholder="minimal 8-character" name="pass" required />
+                        <div class="col-lg-12 ">
+                            <button class="btn btn-primary" id="submit" type="submit" name="login">Masuk</button>
+                            <br>
+                            <a href=" <?php echo base_url('c_master') ?>">
+                                <CENTER>
+                                    <h5 style="color: red;">back </h5>
+                                </CENTER>
+                                <br>
+                            </a>
+                        </div>
+
+
+                    </div>
                 </form>
             </div>
+            <br>
         </div>
     </div>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>AKSILAH</title>
+    <title>Sistem Informasi Akademik Sekolah</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -69,17 +69,17 @@
                                         <li><a href="<?= base_url('C_login/login_siswa'); ?>">Siswa</a>
 
                                         </li>
-                                        <li class="hidden-sm"><a href="<?= base_url('C_guru/login_guru'); ?>">guru</a>
+                                        <li class="hidden-sm"><a href="<?= base_url('C_login/login_guru'); ?>">guru</a>
 
                                         </li>
                                         <li><a href="<?= base_url('C_master/informasi'); ?>">informasi</a>
 
                                         </li>
                                         <li><a href="<?= base_url('C_master/kontak'); ?>">kontak</a></li>
-                                        <li><a href="#"> <button><i class="fa fa-sign-out" aria-hidden="true" style="color:red; font-weight:bold;font-size:20px;"></i>
+                                        <!-- <li><a href="#"> <button><i class="fa fa-sign-out" aria-hidden="true" style="color:red; font-weight:bold;font-size:20px;"></i>
                                                     <h style="color: red;font-weight: bold;">LOGOUT</h>
                                                 </button>
-                                            </a>
+                                            </a> -->
                                     </ul>
                                 </nav>
                             </div>

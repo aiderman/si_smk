@@ -75,13 +75,14 @@
                                                     <thead>
                                                         <tr>
                                                             <th scope="col">No</th>
-                                                            <th scope="col">NIS</th>
-                                                            <th scope="col">NAMA SISWA</th>
-                                                            <th scope="col">MATA PELAJARAN</th>
-                                                            <th scope="col">KELAS</th>
-                                                            <th scope="col">JURUSAN</th>
 
+                                                            <th scope="col">MATA PELAJARAN</th>
+
+                                                            <th scope="col">NILAI</th>
                                                             <th scope="col">KETERANGAN</th>
+
+
+
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -89,12 +90,11 @@
                                                         foreach ($nilai_siswa as $row3) { ?>
                                                             <tr>
                                                                 <th scope="row"><?php echo $a++; ?></th>
-                                                                <td><?php echo $row3->nis_siswa ?></td>
-                                                                <td><?php echo $row3->nama_siswa ?></td>
                                                                 <td><?php echo $row3->nama_matapelajaran ?></td>
-                                                                <td><?php echo $row3->nama_kls ?></td>
-                                                                <td><?php echo $row3->nama_jurusan ?></td>
                                                                 <td><?php echo $row3->nilai_js ?></td>
+
+
+                                                                <td><?php echo $row3->keterangan_js ?></td>
 
                                                             </tr>
                                                         <?php } ?>

@@ -72,94 +72,36 @@
 </section>
 <!-- Background Area End -->
 <!-- Notice Start -->
-<section class="notice-area pt-150 pb-150">
+<section class="notice-area pt-15 pb-15">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="notice-left">
-                    <h3>pengumuman</h3>
+                    <h3><strong>pengumuman</strong></h3>
                     <div class="single-notice-left mb-25 pb-25">
-                        <h4>5, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                        <?php foreach ($p as $row) { ?>
+
+                            <h4><?php echo $row->waktu ?></h4>
+
+                            <p><?php echo $row->pengumuman ?> </p>
+                            <br>
+                        <?php  } ?>
                     </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>4, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left pb-75">
-                        <h4>3, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>5, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>4, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left pb-70">
-                        <h4>3, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>5, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>4, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left pb-70">
-                        <h4>3, June 2021</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
+
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="notice-right">
-                    <div class="single-notice-right mb-25 pb-25">
-                        <h3>PROFESSIONAL TEACHER</h3>
-                        <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings </p>
-                    </div>
-                    <div class="single-notice-right mb-25 pb-25">
-                        <h3>Online courses</h3>
-                        <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings </p>
-                    </div>
-                    <div class="single-notice-right">
-                        <h3>easy to addmission</h3>
-                        <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings </p>
-                    </div>
-                </div>
+
             </div>
         </div>
-    </div>
 </section>
 <!-- Notice End -->
 
-<!-- Notice End -->
-<!-- Choose Start -->
-<section class="choose-area pb-85 pt-77">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-left-4">
-                <div class="choose-content text-start">
-                    <h2>Marselino Kasenda, Mar.Eng</h2>
-                    <p>Visi dari SMK Maritim Polaris ingin mewujudkan lembaga pendidikan dan pelatihan yang mampu menghasilkan sumber daya manusia yang trampil, tangguh, ulet dalam Ilmu Pengetahuan dan Teknologi Maritim yang berlandaskan cinta kasih dan memenuhi standar IMO (International Maritime Organization) </p>
-                    <a class="default-btn" href="<?php echo base_url('C_master/informasi')  ?>">lihat Informasi Sekolah</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Choose Area End -->
 <!-- Courses Area Start -->
-<div class="courses-area pt-150 text-center">
+<div class="courses-area pt-40 text-center">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <!-- <img src=" <?= base_url('assets/') ?>img/icon/section1.png" alt="section-title"> -->
+
                     <h2>DAFTAR KEGIATAN SEKOLAH </h2>
                 </div>
             </div>
@@ -169,7 +111,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-course">
                         <div class="course-img">
-                            <a href="course-details.html"><img src="<?php echo base_url('assets/') ?>img/course/course1A.jpg" alt="course">
+                            <a href="#"><img src="<?php echo base_url('assets/') ?>img/course/course1b.jpg" alt="course">
                                 <div class="course-hover">
                                     <i class="fa fa-link"></i>
                                 </div>
@@ -181,7 +123,6 @@
                             <p>KEIGATAN AKAN DIADAKAN PADA <?php echo $row->hari; ?></p>
 
 
-                            <!-- <a class="default-btn" href=<?php echo base_url('C_master/kegiatan') ?>>lihat detil</a> -->
                         </div>
                     </div>
                 </div>
@@ -190,31 +131,10 @@
         </div>
     </div>
 </div>
+<br>
+<br>
 <!-- Courses Area End -->
 
-<!-- Testimonial Area Start -->
-<div class="testimonial-area pt-110 pb-105 text-center">
-    <div class="container">
-        <div class="row">
-            <div class="testimonial-owl owl-theme owl-carousel">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="single-testimonial">
-                        <div class="testimonial-info">
-                            <div class="testimonial-img">
-                                <img src="<?= base_url('assets/') ?>img/testimonial/testimonialA1.jpg" alt="testimonial">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>I must explain to you how all this mistaken idea of denoung pleure and praising pain was born and I will give you a coete account of the system, and expound the actual</p>
-                                <h4>David Morgan</h4>
-                                <h5>Student, CSE</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Testimonial Area End -->
 
 
