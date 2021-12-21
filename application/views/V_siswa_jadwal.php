@@ -91,7 +91,7 @@
                                                                 <td><?php echo $row3->hari_jadwal ?></td>
                                                                 <td><?php echo $row3->nama_matapelajaran ?></td>
                                                                 <td><?php echo $row3->jam_jadwal ?></td>
-                                                                <td><?php echo $row3->nama_kls ?></td>
+                                                                <td><?php echo $row3->nama_ks ?></td>
                                                                 <td><?php echo $row3->nama_jurusan ?></td>
                                                                 <td><?php echo $row3->semester_jadwal ?></td>
                                                             </tr>

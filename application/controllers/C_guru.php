@@ -69,11 +69,11 @@ class C_guru extends CI_Controller
 		$data['jadwal'] = $this->M_jadwal_pelajaran->show_jadwal_pelajaran_per_guru($id);
 
 		// echo "<pre>";
-		// echo print_r($id);
-		// echo "<pre>";
+		// // echo print_r($id);
+		// // echo "<pre>";
 		// echo print_r($data['jadwal']);
-		// echo "<pre>";
-		// echo print_r($data['nama']);
+		// // echo "<pre>";
+		// // echo print_r($data['nama']);
 		// echo "<pre>";
 		// die();
 

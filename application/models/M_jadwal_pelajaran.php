@@ -13,7 +13,7 @@ class M_jadwal_pelajaran extends CI_Model
 
         $this->db->join('tahun_akademik as ta', 'ta.id_ta=jadwal_pelajaran.idp_ta');
         $this->db->join('guru as g', 'g.id_guru=jadwal_pelajaran.idp_guru');
-        $this->db->join('kelas as k', 'k.id_kls=jadwal_pelajaran.idp_kls');
+        $this->db->join('kelas_siswa as k', 'k.id_ks=jadwal_pelajaran.idp_ks');
 
 
         return $this->db->get($this->table)->result();
@@ -26,7 +26,7 @@ class M_jadwal_pelajaran extends CI_Model
         // $this->db->select('jadwal_pelajaran.hari_jadwal ORDER BY jadwal_pelajaran.hari_jadwal ASC');
         // $this->db->join('guru as g', 'g.id_guru=jadwal_pelajaran.idp_guru');
         $this->db->join('mata_pelajaran as m', 'm.id_matapelajaran=jadwal_pelajaran.idp_matapelajaran');
-        $this->db->join('kelas as k', 'k.id_kls=jadwal_pelajaran.idp_kls');
+        $this->db->join('kelas_siswa as k', 'k.id_ks=jadwal_pelajaran.idp_ks');
         $this->db->where('jadwal_pelajaran.idp_guru', $id);
         $this->db->order_by('jadwal_pelajaran.hari_jadwal ASC');
 

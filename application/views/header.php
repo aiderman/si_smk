@@ -69,6 +69,10 @@
                                         <li><a href="<?= base_url('C_login/login_siswa'); ?>">Siswa</a>
 
                                         </li>
+                                        </li>
+                                        <li><a href="<?= base_url('C_login/login_siswa'); ?>">Orang Tua siswa</a>
+
+                                        </li>
                                         <li class="hidden-sm"><a href="<?= base_url('C_login/login_guru'); ?>">guru</a>
 
                                         </li>

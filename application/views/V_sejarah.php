@@ -107,7 +107,7 @@
                  <h3>struktur organisasi</h3> -->
 
 
-                </div> -->
+                </div>
                 <!-- <div class="col-md-12 ">
                     <center><img style="width: fit-content;" src="<?php echo base_url('assets/img/') ?>general/struktur.png" alt="" /></center>
                 </div> -->

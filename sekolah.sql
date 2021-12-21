@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2021 at 05:05 PM
+-- Generation Time: Dec 03, 2021 at 02:52 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -34,8 +34,15 @@ CREATE TABLE `admin` (
   `hp_admin` varchar(20) NOT NULL,
   `email_admin` varchar(30) NOT NULL,
   `username_admin` varchar(50) NOT NULL,
-  `password_admin` varchar(30) NOT NULL
+  `password_admin` varchar(200) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `nama_admin`, `alamat_admin`, `hp_admin`, `email_admin`, `username_admin`, `password_admin`) VALUES
+(1, 'Admin', 'alamat', 'hp', 'email', 'admin', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
 
 -- --------------------------------------------------------
 
@@ -59,7 +66,7 @@ CREATE TABLE `guru` (
 --
 
 INSERT INTO `guru` (`id_guru`, `nip_guru`, `nama_guru`, `alamat_guru`, `hp_guru`, `email_guru`, `tahunmasuk_guru`, `password_guru`) VALUES
-(2, 111, 'khen ru', 'Alamat', 'HP', 'admin@gmail.com', 2020, '123a'),
+(2, 111, 'khen ru', 'Alamat', 'HP', 'admin@gmail.com', 2020, '123'),
 (3, 12345, 'aider', 'wonasa', '0812', 'aiderman347@gmail.com', 2002, '1234'),
 (4, 15013020, 'HARUN', 'ADSF', '2342', 'DSDF', 2019, 'AAA'),
 (5, 123123, 'ANUNG', 'AFDSF', '432342', 'DSFS', 2018, 'SFDF');
@@ -75,7 +82,7 @@ CREATE TABLE `jadwal_pelajaran` (
   `idp_matapelajaran` int(10) NOT NULL,
   `idp_ta` int(10) NOT NULL,
   `idp_guru` int(10) NOT NULL,
-  `idp_kls` int(10) NOT NULL,
+  `idp_ks` int(10) NOT NULL,
   `idp_jurusan` int(10) NOT NULL,
   `hari_jadwal` enum('SENIN','SELASA','RABU','KAMIS','JUMAT','SABTU','') NOT NULL,
   `jam_jadwal` time NOT NULL,
@@ -86,11 +93,8 @@ CREATE TABLE `jadwal_pelajaran` (
 -- Dumping data for table `jadwal_pelajaran`
 --
 
-INSERT INTO `jadwal_pelajaran` (`id_jadwal`, `idp_matapelajaran`, `idp_ta`, `idp_guru`, `idp_kls`, `idp_jurusan`, `hari_jadwal`, `jam_jadwal`, `semester_jadwal`) VALUES
-(1, 2, 6, 111, 2, 1, 'SENIN', '12:59:00', '1'),
-(2, 4, 2, 111, 2, 1, 'SELASA', '10:06:04', '1'),
-(3, 2, 2, 3, 2, 1, 'RABU', '10:06:04', ''),
-(4, 7, 7, 5, 3, 4, 'SELASA', '10:28:32', '1');
+INSERT INTO `jadwal_pelajaran` (`id_jadwal`, `idp_matapelajaran`, `idp_ta`, `idp_guru`, `idp_ks`, `idp_jurusan`, `hari_jadwal`, `jam_jadwal`, `semester_jadwal`) VALUES
+(7, 2, 2, 111, 1, 1, 'RABU', '12:59:00', '1');
 
 -- --------------------------------------------------------
 
@@ -103,22 +107,23 @@ CREATE TABLE `jadwal_siswa` (
   `idp_siswa` int(30) NOT NULL,
   `idp_jadwal` int(10) NOT NULL,
   `idp_matapelajaran` int(11) NOT NULL,
-  `nilai_js` int(20) NOT NULL,
+  `nilai_js` int(20) DEFAULT NULL,
   `keterangan_js` text DEFAULT NULL,
-  `idp_kls` int(11) NOT NULL,
+  `idp_ks` int(11) NOT NULL,
   `idp_jurusan` int(11) NOT NULL,
-  `nis_siswa` int(22) DEFAULT NULL
+  `idp_guru` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `jadwal_siswa`
 --
 
-INSERT INTO `jadwal_siswa` (`id_js`, `idp_siswa`, `idp_jadwal`, `idp_matapelajaran`, `nilai_js`, `keterangan_js`, `idp_kls`, `idp_jurusan`, `nis_siswa`) VALUES
-(1, 11, 2, 2, 33, 'dasda', 3, 3, 11),
-(2, 11, 2, 7, 12, 'sads', 2, 4, 22),
-(3, 3, 2, 4, 78, 'fh', 3, 3, NULL),
-(4, 5, 4, 5, 87, 'rtyt', 3, 3, NULL);
+INSERT INTO `jadwal_siswa` (`id_js`, `idp_siswa`, `idp_jadwal`, `idp_matapelajaran`, `nilai_js`, `keterangan_js`, `idp_ks`, `idp_jurusan`, `idp_guru`) VALUES
+(13, 4, 7, 2, 99, 'lulus', 1, 1, 2),
+(12, 4, 7, 3, 88, 'lulus', 1, 1, 2),
+(11, 4, 7, 4, 88, 'lulus', 1, 1, 2),
+(10, 1, 7, 2, 88, 'lulus', 1, 1, 2),
+(14, 5, 7, 2, 88, 'lulus', 1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -158,13 +163,9 @@ CREATE TABLE `kegiatan` (
 --
 
 INSERT INTO `kegiatan` (`id_kegiatan`, `nama_kegiatan`, `hari`, `penjelasan`) VALUES
-(1, 'kerja bakti', '2021-11-11', 'kegiatan ini dibuat untuk meningkatkan tingkat kepedulian rakyat terhadap lingkungan'),
-(2, 'pramuka', '2021-11-26', 'kegiata ini merupakan sebuah kegiatan wajib yang di adakan oleh sekolah untuk melatih para siswa menjadi lebih mandiri'),
-(5, 'Gerak Jalan', '2017-09-23', 'Kegiatan yang sangat penting untuk memperingati hari kemerdekaan Indonesia'),
-(6, 'bekti sosial', '2021-11-26', 'kerja ini untuk lalala'),
-(7, 'a', '2021-11-23', 's'),
-(8, 'ss', '2021-11-24', 'ssssss'),
-(9, 'xx', '2021-11-24', 'asd');
+(1, 'kerja bakti', '2021-12-03', 'kegiatan ini dibuat untuk meningkatkan tingkat kepedulian rakyat terhadap lingkungan'),
+(2, 'pramuka', '2021-10-03', 'kegiata ini merupakan sebuah kegiatan wajib yang di adakan oleh sekolah untuk melatih para siswa menjadi lebih mandiri'),
+(5, 'Gerak Jalan', '2021-12-03', 'Kegiatan yang sangat penting untuk memperingati hari kemerdekaan Indonesia');
 
 -- --------------------------------------------------------
 
@@ -174,7 +175,7 @@ INSERT INTO `kegiatan` (`id_kegiatan`, `nama_kegiatan`, `hari`, `penjelasan`) VA
 
 CREATE TABLE `kelas` (
   `id_kls` int(10) NOT NULL,
-  `nama_kls` enum('Kelas 1','Kelas 2','Kelas 3','') NOT NULL
+  `nama_kls` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
@@ -189,13 +190,34 @@ INSERT INTO `kelas` (`id_kls`, `nama_kls`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kelas_siswa`
+--
+
+CREATE TABLE `kelas_siswa` (
+  `id_ks` int(10) NOT NULL,
+  `idp_kelas` int(5) DEFAULT NULL,
+  `nama_ks` varchar(100) NOT NULL,
+  `walikelas_ks` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kelas_siswa`
+--
+
+INSERT INTO `kelas_siswa` (`id_ks`, `idp_kelas`, `nama_ks`, `walikelas_ks`) VALUES
+(1, 2, 'Kelas 1A', 'Walikelas'),
+(2, 2, 'Kelas 1B', 'walikelas');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mata_pelajaran`
 --
 
 CREATE TABLE `mata_pelajaran` (
   `id_matapelajaran` int(10) NOT NULL,
-  `nama_matapelajaran` varchar(50) NOT NULL,
-  `tipe_matapelajaran` enum('UMUM','JURUSAN','PENGEMBANGAN DIRI') DEFAULT NULL
+  `nama_matapelajaran` varchar(100) NOT NULL,
+  `tipe_matapelajaran` varchar(200) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
@@ -238,7 +260,26 @@ CREATE TABLE `operator` (
 
 INSERT INTO `operator` (`id_operator`, `fullname`, `foto`, `username`, `password`, `status`, `last_login`, `date_update`) VALUES
 (1, 'Ferdinand Nelwan', 'isa.jpg', 'admin', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '1', NULL, NULL),
-(2, 'admin', 'default.jpg', 'admin', '1620591caea1848e84f1a984daa2f7ebbffa6959458590a700a989cebadd1301', '1', NULL, '2021-09-20 12:04:37');
+(2, 'Admin', 'default.jpg', 'admin', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '1', NULL, '2021-11-27 16:39:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengumuman`
+--
+
+CREATE TABLE `pengumuman` (
+  `id_pengumuman` int(11) NOT NULL,
+  `pengumuman` text NOT NULL,
+  `waktu` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pengumuman`
+--
+
+INSERT INTO `pengumuman` (`id_pengumuman`, `pengumuman`, `waktu`) VALUES
+(1, 'aidemfadna fasdfaspfdasdmf sdf sadofpsa fdas dfsaod fosad fsa dfoas dfosd fosa foas fo sdfas odfoas ', '2021-12-03 13:57:38');
 
 -- --------------------------------------------------------
 
@@ -258,13 +299,6 @@ CREATE TABLE `sekolah` (
   `sejarah_sekolah` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `sekolah`
---
-
-INSERT INTO `sekolah` (`id`, `nama_sekolah`, `kepala_sekolah`, `alamat_sekolah`, `telp_sekolah`, `keterangan_sekolah`, `email_sekolah`, `website_sekolah`, `sejarah_sekolah`) VALUES
-(1, 'SMK MARITIM POLARIS BITUNG ', '__', '', '0000', 'peringkat “B”', '', 'http://localhost/si_smk/C_master/kontak', 'SMK Maritim Polaris Bitung didirikan pada tanggal 15 November 1999 dibawah naungan Yayasan Tunas Bar');
-
 -- --------------------------------------------------------
 
 --
@@ -275,6 +309,7 @@ CREATE TABLE `siswa` (
   `id_siswa` int(20) NOT NULL,
   `idp_kls` int(10) NOT NULL,
   `idp_jurusan` int(10) NOT NULL,
+  `idp_ks` int(10) NOT NULL,
   `nis_siswa` varchar(100) NOT NULL,
   `nama_siswa` varchar(30) NOT NULL,
   `alamat_siswa` text NOT NULL,
@@ -288,12 +323,12 @@ CREATE TABLE `siswa` (
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `idp_kls`, `idp_jurusan`, `nis_siswa`, `nama_siswa`, `alamat_siswa`, `hp_siswa`, `email_siswa`, `tahunmasuk_siswa`, `password_siswa`) VALUES
-(11, 2, 1, '11', 'alo', 'mokupa', '11111', 'issa.cyber@gmail.com', 1111, '12345678'),
-(22, 2, 2, '22', 'ungke', 'kembes', '08346278342', 'admin@gmail.com', 1111, '12345678'),
-(32, 2, 1, '32', 'mince', 'winagun', '08346278342', 'admin@gmail.com', 2222, '12345678'),
-(4, 3, 3, '5', 'arul maengket', 'wonasa', '234324324', 'wdsdsdfsdf', 2015, '12345678'),
-(5, 3, 4, '112', 'sardo', 'kombos', 'werwe', 'ss@gmail.com', 2013, '12345678');
+INSERT INTO `siswa` (`id_siswa`, `idp_kls`, `idp_jurusan`, `idp_ks`, `nis_siswa`, `nama_siswa`, `alamat_siswa`, `hp_siswa`, `email_siswa`, `tahunmasuk_siswa`, `password_siswa`) VALUES
+(1, 2, 1, 1, '11', 'alo', 'mokupa', '11111', 'issa.cyber@gmail.com', 1111, '123'),
+(2, 2, 1, 1, '22', 'ungke', 'kembes', '08346278342', 'admin@gmail.com', 1111, '123'),
+(3, 2, 1, 1, '21', 'mince', 'winagun', '08346278342', 'admin@gmail.com', 2222, '123'),
+(4, 2, 1, 1, '23', 'arul maengket', 'wonasa', '234324324', 'wdsdsdfsdf', 2015, '123'),
+(5, 2, 1, 1, '112', 'sardo', 'kombos', 'werwe', 'ss@gmail.com', 2013, '123');
 
 -- --------------------------------------------------------
 
@@ -365,6 +400,12 @@ ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id_kls`);
 
 --
+-- Indexes for table `kelas_siswa`
+--
+ALTER TABLE `kelas_siswa`
+  ADD PRIMARY KEY (`id_ks`);
+
+--
 -- Indexes for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
@@ -375,6 +416,12 @@ ALTER TABLE `mata_pelajaran`
 --
 ALTER TABLE `operator`
   ADD PRIMARY KEY (`id_operator`);
+
+--
+-- Indexes for table `pengumuman`
+--
+ALTER TABLE `pengumuman`
+  ADD PRIMARY KEY (`id_pengumuman`);
 
 --
 -- Indexes for table `sekolah`
@@ -402,7 +449,7 @@ ALTER TABLE `tahun_akademik`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_admin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `guru`
@@ -414,13 +461,13 @@ ALTER TABLE `guru`
 -- AUTO_INCREMENT for table `jadwal_pelajaran`
 --
 ALTER TABLE `jadwal_pelajaran`
-  MODIFY `id_jadwal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_jadwal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `jadwal_siswa`
 --
 ALTER TABLE `jadwal_siswa`
-  MODIFY `id_js` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_js` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `jurusan`
@@ -432,13 +479,19 @@ ALTER TABLE `jurusan`
 -- AUTO_INCREMENT for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
-  MODIFY `id_kegiatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_kegiatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
   MODIFY `id_kls` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `kelas_siswa`
+--
+ALTER TABLE `kelas_siswa`
+  MODIFY `id_ks` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `mata_pelajaran`
@@ -453,16 +506,22 @@ ALTER TABLE `operator`
   MODIFY `id_operator` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `pengumuman`
+--
+ALTER TABLE `pengumuman`
+  MODIFY `id_pengumuman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `sekolah`
 --
 ALTER TABLE `sekolah`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_siswa` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tahun_akademik`

@@ -10,6 +10,9 @@ class M_siswa extends CI_Model
         $this->db->where('siswa.nis_siswa', $id);
         return $this->db->get($this->table)->result();
     }
+
+
+    
     public function cek_siswa($nis, $pass)
     {
         $this->db->select('*');
@@ -18,6 +21,8 @@ class M_siswa extends CI_Model
         $this->db->where('siswa.password_siswa', $pass);
         return $this->db->get($this->table)->result();
     }
+
+
     public function siswa_login($data)
     {
         $user = $data['user'];
@@ -26,6 +31,8 @@ class M_siswa extends CI_Model
         $this->db->where(['siswa.nis_siswa', $user], ['password_siswa', $pass]);
         return $this->db->get($this->table)->result();
     }
+
+
     public function jadwal_siswa_individu($id_siswa)
     {
         $this->db->select('*');
